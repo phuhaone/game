@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game kéo búa bao</title>
+</head>
+<body>
+    <h1>TRÒ CHƠI KÉO BÚA BAO</h1>
+
+    <h2>Máy chơi</h2>
+    <img id="may-choi" src="bantayphai.gif">
+
+    <h2>Người chơi</h2>
+    <img id="nguoi-choi" src="bantaytrai.gif">
+
+    <button onclick="chon1()">Chọn Bao</button>
+    <button onclick="chon2()">Chọn Kéo</button>
+    <button onclick="chon3()">Chọn Búa</button>
+    <button onclick="location.reload();">Chơi lại</button>
+
+    <h2 id="ket-qua">Kết quả: </h2>
+
+    <script>
+        var may=["phai-bao.jpg", "phai-keo.jpg", "phai-bua.jpg"]
+        i = Math.floor(Math.random() * 3); //random 0, 1, 2
+        function chon1()
+        {
+            document.getElementById('may-choi').src=may[i];
+            document.getElementById('nguoi-choi').src='trai-bao.jpg';
+            switch(i)
+            {
+                case 0:
+                    document.getElementById('ket-qua').innerText='Cả 2 hòa rồi';
+                    break;
+                case 1:
+                    document.getElementById('ket-qua').innerText='Máy thắng rồi';
+                    break;
+                case 2:
+                    document.getElementById('ket-qua').innerText='Bạn thắng rồi';
+                    break;
+            }
+        }
+        function chon2()
+        {
+            document.getElementById('may-choi').src=may[i];
+            document.getElementById('nguoi-choi').src='trai-keo.jpg';
+            switch(i)
+            {
+                case 0:
+                    document.getElementById('ket-qua').innerText='Bạn thắng rồi';
+                    break;
+                case 1:
+                    document.getElementById('ket-qua').innerText='Cả 2 hòa rồi';
+                    break;
+                case 2:
+                    document.getElementById('ket-qua').innerText='Máy thắng rồi';
+                    break;
+            }
+        }
+        function chon3()
+        {
+            document.getElementById('may-choi').src=may[i];
+            document.getElementById('nguoi-choi').src='trai-bua.jpg';
+            switch(i)
+            {
+                case 0:
+                    document.getElementById('ket-qua').innerText='Máy thắng rồi';
+                    break;
+                case 1:
+                    document.getElementById('ket-qua').innerText='Bạn thắng rồi';
+                    break;
+                case 2:
+                    document.getElementById('ket-qua').innerText='Cả 2 hòa rồi';
+                    break;
+            }
+        }
+    </script>
+</body>
+</html>
